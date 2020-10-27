@@ -1,0 +1,13 @@
+PROCEDURE procedure_name(parameters)
+VAR
+  set_declarations
+BEGIN
+  set_instructions
+END
+
+ALGORITHM algorithm_name
+VAR
+  set_declarations
+BEGIN
+  set_instructions
+END
