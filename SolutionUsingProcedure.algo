@@ -1,13 +1,29 @@
-PROCEDURE procedure_name(parameters)
+PROCEDURE dot_product(v1,v2: ARRAY_OF FLOAT, VAR dot:FLOAT)
 VAR
-  set_declarations
+  i:=INTEGER:=0;
 BEGIN
-  set_instructions
+  dot:=0;
+  WHILE (v1.length==v2.length) DO
+    FOR i FROM 0 TO v1.length-1 DO
+      dot:=dot+v1[i]*v2[i];
+    END_FOR
+  END_WHILE
+  
 END
 
-ALGORITHM algorithm_name
+ALGORITHM is_orthogonal
 VAR
-  set_declarations
+  v1,v2 : ARRAY_OF INTEGER [50];
+  angle : INTEGER;
 BEGIN
-  set_instructions
+    n1 := read_size();    
+    read_array(n1,v1);  
+    n2 := read_size();
+    read_array(n2,v2);
+    dot_product(v1,v2,dot);
+    IF (dot = 0) THEN
+        Write("V1 and V2 are orthogonal");
+    ELSE
+        Write("V1 and V2 are not orthogonal");
+    END_IF 
 END
